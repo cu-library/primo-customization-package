@@ -1,5 +1,4 @@
-# The Primo New UI Customization Workflow Development Environment
-
+# Carleton University Primo UI Customizations
 
 ##css documentation
 
