@@ -4,30 +4,12 @@
 
 /*--------Top Banner ---------------*/
 
-primo-explore.__xs #banner {
-  overflow: hidden;
+primo-explore #banner {
   padding: 5px 0px 0px 5px;
-  width: 135px;
 }
 
 primo-explore.__sm #banner {
-  overflow: hidden;
-  padding: 5px 0px 0px 5px;
-  width: 47px;
-}
-
-primo-explore.__md #banner {
-  overflow: hidden;
-  padding: 5px 0px 0px 5px;
-  width: 135px;
-}
-
-primo-explore.__gt-md div.top-nav-bar prm-logo {
-  max-width: 250px;
-}
-
-primo-explore.__gt-md #banner {
-  padding: 5px 0px 0px 5px;
+  width: 40px;
 }
 
 #banner > a:nth-child(2) {
