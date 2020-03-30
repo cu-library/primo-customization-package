@@ -10,6 +10,11 @@ primo-explore #banner {
 
 primo-explore.__sm #banner {
   width: 40px;
+  overflow: hidden;
+}
+
+primo-explore.__gt-md div.top-nav-bar prm-logo {
+  max-width: 250px;
 }
 
 #banner > a:nth-child(2) {
