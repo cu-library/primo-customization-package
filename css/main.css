@@ -197,16 +197,3 @@ prm-account prm-icon.giant-icon {
 span.umnHathiTrustLink a {
   color: #0f7d00;
 }
-
-span.umnHathiTrustLink {
-  margin-left: -5px;
-}
-
-span.umnHathiTrustLink md-icon svg {
-  height: 1.2em;
-  filter: grayscale(100%);
-}
-
-span.umnHathiTrustLink:hover md-icon svg {
-  filter: grayscale(0%);
-}

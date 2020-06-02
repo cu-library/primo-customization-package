@@ -1,0 +1,10 @@
+{
+  "name": "@cu-library/alma-customization-package",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Kevin Bowrin <kevinbowrin@cunet.carleton.ca>",
+  "license": "MIT",
+  "dependencies": {
+    "primo-explore-hathitrust-availability": "2.6.2"
+  }
+}
