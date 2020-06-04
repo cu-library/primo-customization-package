@@ -1,6 +1,5 @@
 {
   "name": "@cu-library/alma-customization-package",
-  "version": "1.3.0",
   "private": true,
   "author": "Kevin Bowrin <kevinbowrin@cunet.carleton.ca>",
   "license": "MIT",
