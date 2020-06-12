@@ -4,6 +4,6 @@
   "author": "Kevin Bowrin <kevinbowrin@cunet.carleton.ca>",
   "license": "MIT",
   "dependencies": {
-    "primo-explore-hathitrust-availability": "2.6.2"
+    "primo-explore-hathitrust-availability": "github:cu-library/primo-explore-hathitrust-availability#13a2b87cb"
   }
 }
