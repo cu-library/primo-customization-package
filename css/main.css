@@ -200,7 +200,6 @@ span.umnHathiTrustLink a {
 
 /* Hide CDI specific facets */
 /* per https://knowledge.exlibrisgroup.com/Primo/Community_Knowledge/Primo_VE%3A_Hiding_specific_facets */
-div.facet-element-marker-rtype[data-facet-value='rtype-datasets'],
 div.facet-element-marker-rtype[data-facet-value='rtype-government_documents'],
 div.facet-element-marker-rtype[data-facet-value='rtype-legal_documents']
 {
