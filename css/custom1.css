@@ -128,9 +128,16 @@ a, .md-button.arrow-link-button .button-content {
   color: #bf112b;
 }
 
-/*Remove sign-in alert bar */
-.bar.alert-bar, .prm-alert-border {
-  display:none;
+/*Change alert bar colors */
+prm-alert-bar div.alert-bar {
+  border-color: #555 !important;
+  background-color: #666 !important;
+  border-radius: 0px !important;
+  color: white !important;
+}
+
+prm-alert-bar div.alert-bar button {
+  color: white !important;
 }
 
 /*Capitalize main menu Links */
