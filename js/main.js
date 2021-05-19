@@ -13,3 +13,17 @@ import 'primo-explore-hathitrust-availability';
         template: ''
     });
 })();
+(function() {
+    // Add the LibraryH3lp container to the page.
+    var chatContainer = document.createElement('div');
+    chatContainer.id = 'libraryh3lp-container';
+    chatContainer.classList.add('needs-js');
+    document.body.appendChild(chatContainer);
+    // Add the LibraryH3lp script, which adds the chat button.
+    var x = document.createElement("script");
+    x.type = "text/javascript";
+    x.async = true;
+    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "ca.libraryh3lp.com/js/libraryh3lp.js?1213";
+    var y = document.getElementsByTagName("script")[0];
+    y.parentNode.insertBefore(x, y);
+})();

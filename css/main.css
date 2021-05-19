@@ -212,4 +212,35 @@ div.facet-element-marker-rtype[data-facet-value='rtype-legal_documents'] {
   display: none !important;
 }
 
+/* LibraryH3lp chat link */
+#libraryh3lp-button, #libraryh3lp-button-offline a {
+  transform: rotate(90deg);
+  transform-origin: top right;
+  position: fixed;
+  top: 370px;
+  right: 0px;
+  background: #bf112b;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 0px 0px 4px 4px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  z-index: 10000;
+  transition: padding-top 0.15s ease-in-out;
+}
+
+#libraryh3lp-button:hover, #libraryh3lp-button-offline a:hover {
+  padding-top: 10px;
+}
+
+#libraryh3lp-button-offline a:hover, #libraryh3lp-button-offline a:focus {
+  box-shadow: none;
+}
+
+#libraryh3lp-button svg, #libraryh3lp-button-offline a svg {
+  margin-right: 8px;
+  height: 20px;
+  width: 20px;
+}
 
