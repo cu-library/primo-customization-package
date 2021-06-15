@@ -244,3 +244,7 @@ div.facet-element-marker-rtype[data-facet-value='rtype-legal_documents'] {
   width: 20px;
 }
 
+/* Hide "photocopy" option on Resource Sharing form */
+#getit_link1_0.full-view-section md-radio-button[value="PHYSICAL_NON_RETURNABLE"]{
+  display: none;
+}
