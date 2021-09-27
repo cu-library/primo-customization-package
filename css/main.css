@@ -248,3 +248,8 @@ div.facet-element-marker-rtype[data-facet-value='rtype-legal_documents'] {
 #getit_link1_0.full-view-section md-radio-button[value="PHYSICAL_NON_RETURNABLE"]{
   display: none;
 }
+
+#getit_link1_1.full-view-section md-radio-button[value="PHYSICAL_NON_RETURNABLE"]{
+  display: none;
+}
+
