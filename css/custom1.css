@@ -422,6 +422,28 @@ prm-blank_ill md-radio-button[value="PHYSICAL_NON_RETURNABLE"] {
   display: none;
 }
 
+div.kiosk-warning-wrapper {
+  padding-top: 1.5em;
+}
+
+div.kiosk-warning-content {
+}
+
+div.kiosk-warning-content md-icon {
+  margin-right: 1em;
+  color: white;
+  margin-top: 1px;
+}
+
+div.kiosk-warning-text {
+  color: white;
+  font-size: 120%;
+}
+
+span.kiosk-warning-label {
+  font-weight: bold;
+}
+
 span.umnHathiTrustLink {
   margin-left: -5px;
 }
