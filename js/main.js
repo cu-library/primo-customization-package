@@ -14,6 +14,7 @@ import 'primo-explore-hathitrust-availability';
     });
 })();
 (function() {
+    'use strict';
     // Add the LibraryH3lp container to the page.
     var chatContainer = document.createElement('div');
     chatContainer.id = 'libraryh3lp-container';
