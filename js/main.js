@@ -5,7 +5,7 @@ import 'primo-explore-hathitrust-availability';
     // Include HathiTrust full text links.
     app.component('prmSearchResultAvailabilityLineAfter', {
         template: '<hathi-trust-availability msg="Full Text Available Online at HathiTrust" entity-id="http://cufed.carleton.ca/adfs/services/trust"></hathi-trust-availability>'
-    })
+    });
     // Change the default RIS export character encoding to UTF-8.
     app.component('prmExportRisAfter', {
         bindings: { parentCtrl: '<' },
