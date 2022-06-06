@@ -253,3 +253,6 @@ div.facet-element-marker-rtype[data-facet-value='rtype-legal_documents'] {
   display: none;
 }
 
+prm-blank_ill md-radio-button[value="PHYSICAL_NON_RETURNABLE"] {
+  display: none;
+}
