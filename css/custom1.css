@@ -410,14 +410,17 @@ div.facet-element-marker-rtype[data-facet-value='rtype-legal_documents'] {
 }
 
 /* Hide "photocopy" option on Resource Sharing form */
-#getit_link1_0.full-view-section md-radio-button[value="PHYSICAL_NON_RETURNABLE"]{
+#getit_link1_0.full-view-section md-radio-button[value="PHYSICAL_NON_RETURNABLE"] {
   display: none;
 }
 
-#getit_link1_1.full-view-section md-radio-button[value="PHYSICAL_NON_RETURNABLE"]{
+#getit_link1_1.full-view-section md-radio-button[value="PHYSICAL_NON_RETURNABLE"] {
   display: none;
 }
 
+prm-blank_ill md-radio-button[value="PHYSICAL_NON_RETURNABLE"] {
+  display: none;
+}
 
 span.umnHathiTrustLink {
   margin-left: -5px;
