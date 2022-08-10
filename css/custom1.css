@@ -444,6 +444,10 @@ span.kiosk-warning-label {
   font-weight: bold;
 }
 
+prm-resource-recommender {
+    display: none;
+}
+
 span.umnHathiTrustLink {
   margin-left: -5px;
 }
