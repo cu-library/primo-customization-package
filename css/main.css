@@ -278,3 +278,7 @@ div.kiosk-warning-text {
 span.kiosk-warning-label {
   font-weight: bold;
 }
+
+prm-resource-recommender {
+    display: none;
+}
