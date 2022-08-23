@@ -257,6 +257,8 @@ prm-blank_ill md-radio-button[value="PHYSICAL_NON_RETURNABLE"] {
   display: none;
 }
 
+/* Kiosk overrides */
+
 div.kiosk-warning-wrapper {
   padding-top: 1.5em;
 }
@@ -280,5 +282,37 @@ span.kiosk-warning-label {
 }
 
 prm-resource-recommender {
-    display: none;
+    display: none !important;
+}
+
+prm-topbar prm-search-bookmark-filter {
+    display: none !important;
+}
+
+prm-topbar prm-user-area-expandable {
+    display: none !important;
+}
+
+prm-search prm-alert-bar {
+    display: none !important;
+}
+
+prm-location-items div.alert-bar {
+    display: none !important;
+}
+
+prm-request-services prm-alert-bar {
+    display: none !important;
+}
+
+md-virtual-repeat-container ul.md-autocomplete-suggestions div:first-child li {
+    display: none !important;
+}
+
+prm-save-to-favorites-button {
+    display: none !important;
+}
+
+button.pin-button {
+    display: none !important;
 }
