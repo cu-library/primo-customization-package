@@ -434,3 +434,14 @@ span.umnHathiTrustLink md-icon svg {
 span.umnHathiTrustLink:hover md-icon svg {
   filter: grayscale(0%);
 }
+
+/* LOCAL BANNER */
+body::before {
+content: "Floor 1 is closed until late August. Please sign in to request items for pick-up or visit the Library Services desk on Floor 2.";
+display: inline-block;
+background: #FFFF00;
+text-align: center;
+width: 100%;
+font-weight: bold;
+}
+/* END local banner */
