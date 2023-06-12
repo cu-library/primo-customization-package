@@ -1,0 +1,172 @@
+/*Hide select Omni locations on the REQUEST FORM in Alma*/
+/*makes sure that external patrons can't see weird locations at other Omni partners to request items to be sent to*/
+/*remove the section for your own institution from this set below so that these locations show up for your LOCAL patrons*/
+
+/*Algoma Request Form*/
+/*no locations hidden*/
+
+/*Brock Request Form*/
+md-option[value="112034360005152$$OUT_OF_INSTITUTION"] { display: none; } /*IRC Hamilton*/
+md-option[value="112034740005152$$OUT_OF_INSTITUTION"] { display: none; } /*IRC STC*/
+md-option[value="2318595710005152$$OUT_OF_INSTITUTION"] { display: none; } /*Makerspace*/
+md-option[value="1257805430005152$$OUT_OF_INSTITUTION"] { display: none; } /*Map Library*/
+md-option[value="507397600005152$$OUT_OF_INSTITUTION"] { display: none; } /*Marilyn I Walker School of Fine and Performing Arts*/
+md-option[value="1257805430005152$$OUT_OF_INSTITUTION"] { display: none; } /*Pedagogical*/
+
+/*Carleton Request Form*/
+md-option[value="8602059240005153$$OUT_OF_INSTITUTION"] { display: none; } /*Mail Delivery*/
+md-option[value="8602058720005153$$OUT_OF_INSTITUTION"] { display: none; } /*curbside pick-up*/
+
+/*Guelph Request Form*/
+/*no locations hidden*/
+
+/*Lakehead Request Form*/
+md-option[value="112034460005155$$OUT_OF_INSTITUTION"] { display: none; } /*Law Library*/
+
+/*Laurentian Request Form*/
+md-option[value="112077800005165$$OUT_OF_INSTITUTION"] { display: none; } /*Education Resource Centre*/
+md-option[value="112077420005165$$OUT_OF_INSTITUTION"] { display: none; } /*Architecture*/
+
+/*McMaster Request Form*/
+md-option[value="162413310007371$$OUT_OF_INSTITUTION"] { display: none; } /*MapCollection*/
+md-option[value="162414450007371$$OUT_OF_INSTITUTION"] { display: none; } /*ArchivesAndResearchCollection*/
+md-option[value="162414070007371$$OUT_OF_INSTITUTION"] { display: none; } /*BertrandRussellArchives*/
+md-option[value="162412170007371$$OUT_OF_INSTITUTION"] { display: none; } /*Health Sciences Library*/
+
+/*Nipissing Request Form*/
+md-option[value="2180891240005157$$OUT_OF_INSTITUTION"] { display: none; } /*VIRTUAL*/
+md-option[value="112034360005157$$OUT_OF_INSTITUTION"] { display: none; } /*Commerce Court Library*/
+md-option[value="2705194110005157$$OUT_OF_INSTITUTION"] { display: none; } /*Test*/
+
+/*OCADU Request Form*/
+/*no locations hidden*/
+
+/*Ontario Tech Request Form*/
+md-option[value="112026640005160$$OUT_OF_INSTITUTION"] { display: none; } /*Whitby*/
+md-option[value="37093253850005160$$OUT_OF_INSTITUTION"] { display: none; } /*Home Delivery*/
+
+/*Queen's Request Form*/
+/*no locations hidden*/
+
+/*Trent Request Form*/
+/*no locations hidden*/
+
+/*U of Ottawa Request Form*/
+md-option[value="112023650005161$$OUT_OF_INSTITUTION"] { display: none; } /*UOHI-Berkman*/
+
+/*U of Waterloo Request Form*/
+md-option[value="3369615780005162$$OUT_OF_INSTITUTION"] { display: none; } /*Musagetes Book Pickup*/
+md-option[value="3369628040005162$$OUT_OF_INSTITUTION"] { display: none; } /*Milton Good Book Pickup*/
+md-option[value="2811705780005162$$OUT_OF_INSTITUTION"] { display: none; } /*Dana Porter Book Pickup*/
+md-option[value="3399246160005162$$OUT_OF_INSTITUTION"] { display: none; } /*Books By Mail*/
+
+/*U of Windsor Request Form*/
+md-option[value="147948340002181$$OUT_OF_INSTITUTION"] { display: none; } /*Paul Martin Law Library*/
+
+/*Western University Request Form*/
+md-option[value="112035590005163$$OUT_OF_INSTITUTION"] { display: none; } /*ERC*/
+md-option[value="112036730005163$$OUT_OF_INSTITUTION"] { display: none; } /*ILL Staff Only*/
+
+/*Wilfrid Laurier Request Form*/
+md-option[value="3122891110005156$$OUT_OF_INSTITUTION"] { display: none; } /*Mail on Demand*/
+md-option[value="112036500005156$$OUT_OF_INSTITUTION"] { display: none; } /*Wilfrid Laurier University Library at Kitchener*/
+
+/*York Request Form*/
+md-option[value="8188056800005164$$OUT_OF_INSTITUTION"] { display: none; } /*Keele Book Lockers*/
+md-option[value="8188104370005164$$OUT_OF_INSTITUTION"] { display: none; } /*Glendon Book Lockers*/
+md-option[value="9599265900005164$$OUT_OF_INSTITUTION"] { display: none; } /*Osgoode Book Lockers*/
+md-option[value="112036150005164$$OUT_OF_INSTITUTION"] { display: none; } /*Osgoode Hall*/
+
+/* And hide empty campuses in the Request Forms too */
+
+/* Nipissing */
+md-optgroup[label="Can-Campus"] > label { display: none; }
+
+/* Waterloo */
+md-optgroup[label="zz_No Longer In Use - Do Not Select"] > label { display: none; }
+
+/* Wilfrid Laurier */
+md-optgroup[label="Kitchener pickups for FSW students and staff only"] > label { display: none; }
+
+/*...............................*/
+/*...............................*/
+/*...............................*/
+/*...............................*/
+
+/*Hide select Omni locations on the RESOURCE SHARING REQUEST FORM in Alma*/
+/*makes sure that external patrons can't see weird locations at other Omni partners to request items to be sent to*/
+
+/*Algoma Resource Sharing Request Form*/
+/*no locations hidden*/
+
+/*Brock Resource Sharing Request Form*/
+md-option[value="112034360005152"] { display: none; } /*IRC Hamilton*/
+md-option[value="112034740005152"] { display: none; } /*IRC STC*/
+md-option[value="2318595710005152"] { display: none; } /*Makerspace*/
+md-option[value="1257805430005152"] { display: none; } /*Map Library*/
+md-option[value="507397600005152"] { display: none; } /*Marilyn I Walker School of Fine and Performing Arts*/
+md-option[value="1257805430005152"] { display: none; } /*Pedagogical*/
+
+/*Carleton Resource Sharing Request Form*/
+md-option[value="8602059240005153"] { display: none; } /*Mail Delivery*/
+md-option[value="8602058720005153"] { display: none; } /*Mail Delivery*/
+
+/*Guelph Resource Sharing Request Form*/
+/*no locations hidden*/
+
+/*Lakehead Resource Sharing Request Form*/
+md-option[value="112034460005155"] { display: none; } /*Law Library*/
+
+/*Laurentian Resource Sharing Request Form*/
+md-option[value="112077800005165"] { display: none; } /*Education Resource Centre*/
+md-option[value="112077420005165"] { display: none; } /*Architecture*/
+
+/*McMaster Resource Sharing Request Form*/
+md-option[value="162413310007371"] { display: none; } /*MapCollection*/
+md-option[value="162414450007371"] { display: none; } /*ArchivesAndResearchCollection*/
+md-option[value="162414070007371"] { display: none; } /*BertrandRussellArchives*/
+md-option[value="162412170007371"] { display: none; } /*Health Sciences Library*/
+
+/*Nipissing Resource Sharing Request Form*/
+md-option[value="2180891240005157"] { display: none; } /*VIRTUAL*/
+md-option[value="112034360005157"] { display: none; } /*Commerce Court Library*/
+md-option[value="2705194110005157"] { display: none; } /*Test*/
+
+/*OCADU Resource Sharing Request Form*/
+/*no locations hidden*/
+
+/*Ontario Tech Resource Sharing Request Form*/
+md-option[value="112026640005160"] { display: none; } /*Whitby*/
+md-option[value="37093253850005160"] { display: none; } /*Home Delivery*/
+
+/*Queen's Resource Sharing Request Form*/
+/*no locations hidden*/
+
+/*Trent Resource Sharing Request Form*/
+/*no locations hidden*/
+
+/*U of Ottawa Resource Sharing Request Form*/
+md-option[value="112023650005161"] { display: none; } /*UOHI-Berkman*/
+
+/*U of Waterloo Resource Sharing Request Form*/
+md-option[value="3369615780005162"] { display: none; } /*Musagetes Book Pickup*/
+md-option[value="3369628040005162"] { display: none; } /*Milton Good Book Pickup*/
+md-option[value="2811705780005162"] { display: none; } /*Dana Porter Book Pickup*/
+md-option[value="3399246160005162"] { display: none; } /*Books By Mail*/
+
+/*U of Windsor Resource Sharing Request Form*/
+md-option[value="147948340002181"] { display: none; } /*Paul Martin Law Library*/
+
+/*Western University Resource Sharing Request Form*/
+md-option[value="112035590005163"] { display: none; } /*ERC*/
+md-option[value="112036730005163"] { display: none; } /*ILL Staff Only*/
+
+/*Wilfrid Laurier Resource Sharing Request Form*/
+md-option[value="3122891110005156"] { display: none; } /*Mail on Demand*/
+md-option[value="112036500005156"] { display: none; } /*Wilfrid Laurier University Library at Kitchener*/
+
+/*York Resource Sharing Request Form*/
+md-option[value="8188056800005164"] { display: none; } /*Keele Book Lockers*/
+md-option[value="8188104370005164"] { display: none; } /*Glendon Book Lockers*/
+md-option[value="9599265900005164"] { display: none; } /*Osgoode Book Lockers*/
+md-option[value="112036150005164"] { display: none; } /*Osgoode Hall*/

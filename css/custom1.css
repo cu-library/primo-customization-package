@@ -1,3 +1,5 @@
+/*-----Pickup Anywhere Location Hiding START-----*/
+
 /*Hide select Omni locations on the REQUEST FORM in Alma*/
 /*makes sure that external patrons can't see weird locations at other Omni partners to request items to be sent to*/
 /*remove the section for your own institution from this set below so that these locations show up for your LOCAL patrons*/
@@ -14,8 +16,8 @@ md-option[value="507397600005152$$OUT_OF_INSTITUTION"] { display: none; } /*Mari
 md-option[value="1257805430005152$$OUT_OF_INSTITUTION"] { display: none; } /*Pedagogical*/
 
 /*Carleton Request Form*/
-md-option[value="8602059240005153$$OUT_OF_INSTITUTION"] { display: none; } /*Mail Delivery*/
-md-option[value="8602058720005153$$OUT_OF_INSTITUTION"] { display: none; } /*curbside pick-up*/
+/* md-option[value="8602059240005153$$OUT_OF_INSTITUTION"] { display: none; } /*Mail Delivery*/
+/* md-option[value="8602058720005153$$OUT_OF_INSTITUTION"] { display: none; } /*curbside pick-up*/
 
 /*Guelph Request Form*/
 /*no locations hidden*/
@@ -28,7 +30,10 @@ md-option[value="112077800005165$$OUT_OF_INSTITUTION"] { display: none; } /*Educ
 md-option[value="112077420005165$$OUT_OF_INSTITUTION"] { display: none; } /*Architecture*/
 
 /*McMaster Request Form*/
-/*no locations hidden*/
+md-option[value="162413310007371$$OUT_OF_INSTITUTION"] { display: none; } /*MapCollection*/
+md-option[value="162414450007371$$OUT_OF_INSTITUTION"] { display: none; } /*ArchivesAndResearchCollection*/
+md-option[value="162414070007371$$OUT_OF_INSTITUTION"] { display: none; } /*BertrandRussellArchives*/
+md-option[value="162412170007371$$OUT_OF_INSTITUTION"] { display: none; } /*Health Sciences Library*/
 
 /*Nipissing Request Form*/
 md-option[value="2180891240005157$$OUT_OF_INSTITUTION"] { display: none; } /*VIRTUAL*/
@@ -72,6 +77,7 @@ md-option[value="112036500005156$$OUT_OF_INSTITUTION"] { display: none; } /*Wilf
 md-option[value="8188056800005164$$OUT_OF_INSTITUTION"] { display: none; } /*Keele Book Lockers*/
 md-option[value="8188104370005164$$OUT_OF_INSTITUTION"] { display: none; } /*Glendon Book Lockers*/
 md-option[value="9599265900005164$$OUT_OF_INSTITUTION"] { display: none; } /*Osgoode Book Lockers*/
+md-option[value="112036150005164$$OUT_OF_INSTITUTION"] { display: none; } /*Osgoode Hall*/
 
 /* And hide empty campuses in the Request Forms too */
 
@@ -118,7 +124,10 @@ md-option[value="112077800005165"] { display: none; } /*Education Resource Centr
 md-option[value="112077420005165"] { display: none; } /*Architecture*/
 
 /*McMaster Resource Sharing Request Form*/
-/*no locations hidden*/
+md-option[value="162413310007371"] { display: none; } /*MapCollection*/
+md-option[value="162414450007371"] { display: none; } /*ArchivesAndResearchCollection*/
+md-option[value="162414070007371"] { display: none; } /*BertrandRussellArchives*/
+md-option[value="162412170007371"] { display: none; } /*Health Sciences Library*/
 
 /*Nipissing Resource Sharing Request Form*/
 md-option[value="2180891240005157"] { display: none; } /*VIRTUAL*/
@@ -162,6 +171,10 @@ md-option[value="112036500005156"] { display: none; } /*Wilfrid Laurier Universi
 md-option[value="8188056800005164"] { display: none; } /*Keele Book Lockers*/
 md-option[value="8188104370005164"] { display: none; } /*Glendon Book Lockers*/
 md-option[value="9599265900005164"] { display: none; } /*Osgoode Book Lockers*/
+md-option[value="112036150005164"] { display: none; } /*Osgoode Hall*/
+
+
+/*-----Pickup Anywhere Location Hiding END-----*/
 
 /* Hide Tags in Detailed Display */
 [aria-label="Tags"]{display:none;}
