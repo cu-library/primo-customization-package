@@ -458,3 +458,7 @@ width: 100%;
 font-weight: bold;
 }
 /* END local banner */
+
+/* Hide Journal Search bullets */
+li[translate="nui.journalsearch.category.option3"]{display: none;}
+li[translate="nui.journalsearch.category.option1"]{display: none;}
