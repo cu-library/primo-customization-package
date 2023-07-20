@@ -1,5 +1,3 @@
-/*-----Pickup Anywhere Location Hiding START-----*/
-
 /*Hide select Omni locations on the REQUEST FORM in Alma*/
 /*makes sure that external patrons can't see weird locations at other Omni partners to request items to be sent to*/
 /*remove the section for your own institution from this set below so that these locations show up for your LOCAL patrons*/
@@ -16,8 +14,8 @@ md-option[value="507397600005152$$OUT_OF_INSTITUTION"] { display: none; } /*Mari
 md-option[value="1257805430005152$$OUT_OF_INSTITUTION"] { display: none; } /*Pedagogical*/
 
 /*Carleton Request Form*/
-/* md-option[value="8602059240005153$$OUT_OF_INSTITUTION"] { display: none; } /*Mail Delivery*/
-/* md-option[value="8602058720005153$$OUT_OF_INSTITUTION"] { display: none; } /*curbside pick-up*/
+/* md-option[value="8602059240005153$$OUT_OF_INSTITUTION"] { display: none; } */ /*Mail Delivery*/
+/* md-option[value="8602058720005153$$OUT_OF_INSTITUTION"] { display: none; } */ /*curbside pick-up*/
 
 /*Guelph Request Form*/
 /*no locations hidden*/
@@ -172,9 +170,6 @@ md-option[value="8188056800005164"] { display: none; } /*Keele Book Lockers*/
 md-option[value="8188104370005164"] { display: none; } /*Glendon Book Lockers*/
 md-option[value="9599265900005164"] { display: none; } /*Osgoode Book Lockers*/
 md-option[value="112036150005164"] { display: none; } /*Osgoode Hall*/
-
-
-/*-----Pickup Anywhere Location Hiding END-----*/
 
 /* Hide Tags in Detailed Display */
 [aria-label="Tags"]{display:none;}
@@ -435,19 +430,6 @@ prm-blank_ill md-radio-button[value="PHYSICAL_NON_RETURNABLE"] {
   display: none;
 }
 
-span.umnHathiTrustLink {
-  margin-left: -5px;
-}
-
-span.umnHathiTrustLink md-icon svg {
-  height: 1.2em;
-  filter: grayscale(100%);
-}
-
-span.umnHathiTrustLink:hover md-icon svg {
-  filter: grayscale(0%);
-}
-
 /* LOCAL BANNER */
 body::before {
 content: "Floor 1 is closed until late August. Please sign in to request items for pick-up or visit the Library Services desk on Floor 2.";
@@ -462,3 +444,16 @@ font-weight: bold;
 /* Hide Journal Search bullets */
 li[translate="nui.journalsearch.category.option3"]{display: none;}
 li[translate="nui.journalsearch.category.option1"]{display: none;}
+
+span.umnHathiTrustLink {
+  margin-left: -5px;
+}
+
+span.umnHathiTrustLink md-icon svg {
+  height: 1.2em;
+  filter: grayscale(100%);
+}
+
+span.umnHathiTrustLink:hover md-icon svg {
+  filter: grayscale(0%);
+}

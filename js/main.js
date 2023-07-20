@@ -12,6 +12,25 @@ import 'primo-explore-hathitrust-availability';
         controller: function() { this.parentCtrl.encodingVal = 'UTF-8'; },
         template: ''
     });
+
+    app.component('carletonAcceptableUsePolicyLink', {
+        bindings: {parentCtrl: '<'},
+        controller: 'carletonAcceptableUsePolicyLinkController',
+        template: `<a ng-if="$ctrl.online()" href="https://library.carleton.ca/about/policies/electronic-resources-acceptable-use-policy">Electronic Resources Acceptable Use Policy <prm-icon icon-type="svg" svg-icon-set="primo-ui" external-link="" icon-definition="open-in-new"></prm-icon></a>`
+    });
+
+    app.controller('carletonAcceptableUsePolicyLinkController', [function () {
+        var vm = this;
+        vm.online = online;
+        function online() {
+            return vm.parentCtrl.title === 'nui.getit.service_viewit';
+        }
+    }]);
+
+    app.component('prmServiceHeaderAfter', {
+        bindings: {parentCtrl: `<`},
+        template: `<carleton-acceptable-use-policy-link parent-ctrl="$ctrl.parentCtrl"></carleton-acceptable-use-policy-link>`
+    });
 })();
 (function() {
     'use strict';
