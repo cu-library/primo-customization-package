@@ -487,6 +487,18 @@ body::before {
   font-weight: bold;
 }
 
+/* Home page style tweaks */
+
+p.home-page-link-solo {
+    margin-bottom: 0.9em;
+}
+
+ul.where-can-i-get-help-list li {
+    margin-bottom: 0.4em;
+}
+
+
+
 span.umnHathiTrustLink {
   margin-left: -5px;
 }

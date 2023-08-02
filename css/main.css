@@ -313,3 +313,15 @@ body::before {
   width: 100%;
   font-weight: bold;
 }
+
+/* Home page style tweaks */
+
+p.home-page-link-solo {
+    margin-bottom: 0.9em;
+}
+
+ul.where-can-i-get-help-list li {
+    margin-bottom: 0.4em;
+}
+
+
