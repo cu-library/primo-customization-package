@@ -477,16 +477,6 @@ li[translate="nui.journalsearch.category.option1"] {
   display: none;
 }
 
-/* Temporary banner for closure */
-body::before {
-  content: "Floor 1 is closed until late August. Please sign in to request items for pick-up or visit the Library Services desk on Floor 2.";
-  display: inline-block;
-  background: #FFFF00;
-  text-align: center;
-  width: 100%;
-  font-weight: bold;
-}
-
 /* Home page style tweaks */
 
 p.home-page-link-solo {
