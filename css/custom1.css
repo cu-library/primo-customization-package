@@ -477,6 +477,16 @@ li[translate="nui.journalsearch.category.option1"] {
   display: none;
 }
 
+/* Adding a "SKIP TO" header to the left-hand-side menu links in records. */
+/* Per CFDUX Round 2 - Omni Improvement and Enhancements implementation. */
+#services-index::before {
+    content: "Skip to ";
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    padding-top: 2em;
+}
+
 /* Home page style tweaks */
 
 p.home-page-link-solo {
@@ -485,15 +495,6 @@ p.home-page-link-solo {
 
 ul.where-can-i-get-help-list li {
     margin-bottom: 0.4em;
-}
-
-/* Adding a "SKIP TO" header to the left-hand-side menu links in records, as per CFDUX Round 2 - Omni Improvement and Enhancements implementation. */
-#services-index::before {
-
-    content: "Skip to ";
-    font-weight: bold;
-    text-transform: uppercase;
-    color: black;
 }
 
 span.umnHathiTrustLink {
