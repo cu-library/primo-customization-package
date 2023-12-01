@@ -323,3 +323,36 @@ p.home-page-link-solo {
 ul.where-can-i-get-help-list li {
     margin-bottom: 0.4em;
 }
+
+/* Alternative Request Form link */
+.alternative-request-form-link {
+  margin-top: 10px;
+}
+
+.alternative-request-form-link a::before {
+  background-image: url('../img/accessibility-icon.svg');
+  width: 25px;
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-left: -25px;
+}
+
+.alternative-request-form-link a {
+  padding-left: 20px;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
