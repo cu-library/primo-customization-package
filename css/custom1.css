@@ -485,7 +485,18 @@ li[translate="nui.journalsearch.category.option1"] {
     text-transform: uppercase;
     color: black;
     padding-top: 2em;
+	margin-top: 20px;
+	margin-bottom: -15px;
 }
+
+#services-index:lang(fr)::before {
+  content: "Passer à ";
+}
+
+span[translate="nui.brief.results.tabs.brief"] {
+	
+}
+
 
 /* Home page style tweaks */
 
