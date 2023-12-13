@@ -479,24 +479,17 @@ li[translate="nui.journalsearch.category.option1"] {
 
 /* Adding a "SKIP TO" header to the left-hand-side menu links in records. */
 /* Per CFDUX Round 2 - Omni Improvement and Enhancements implementation. */
-#services-index::before {
+span[translate="nui.brief.results.tabs.brief"]::before {
     content: "Skip to ";
     font-weight: bold;
     text-transform: uppercase;
     color: black;
-    padding-top: 2em;
-	margin-top: 20px;
-	margin-bottom: -15px;
+	display: block;
 }
 
 #services-index:lang(fr)::before {
   content: "Passer à ";
 }
-
-span[translate="nui.brief.results.tabs.brief"] {
-	
-}
-
 
 /* Home page style tweaks */
 
