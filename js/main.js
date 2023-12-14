@@ -214,55 +214,35 @@ import 'primo-explore-hathitrust-availability';
         }
     }]);
 
-    // Add components to the prmFullViewAfter container.
-    app.component('prmFullViewAfter', {
+    // Add components to the prmActionContainerAfter container.
+    app.component('prmActionContainerAfter', {
         bindings: { parentCtrl: '<' },
         template: `<carleton-add-skip-to-header parent-ctrl="$ctrl.parentCtrl">
                    </carleton-add-skip-to-header>`
     });
     // Add a Skip To header. This is borrowed and adapted from UWindsor.
-    // We're going to misuse the ng-if here. The services-index container
-    // we want to prepend to isn't available during onInit. So,
-    // we fire addHeader using the if until it is available.
-    // After the header is added, return false as soon as possible.
     app.component('carletonAddSkipToHeader', {
         bindings: {parentCtrl: '<'},
-        controller: 'carletonAddSkipToHeaderController',
-        template: `<span ng-if="$ctrl.addHeader()"></span>`
+        controller: 'carletonAddSkipToHeaderController'
     });
     app.controller('carletonAddSkipToHeaderController', [function(){
         var vm = this;
-        vm.addHeader = addHeader;
-        vm.added = false;
-        function addHeader(){
-                if (vm.added === true) {
-                    return false;
-                }
-                var service_index = document.getElementById('services-index');
-                if (service_index === null) {
-                    return false;
-                }
-                var service_buttons = service_index.getElementsByTagName('button');
-                if (service_buttons.length == 0){
-                    return false;
-                }
-                var first_button = service_buttons[0];
-                // target #services-index to add an h3 Skip To heading
-                // h3 matches brief display facet headings
-                // Text much longer than 'Skip To' will be truncated by Primo VE
-                //default lang to en$
-                var heading_text = 'Skip To';
-                // Create URLSearchParams object to get query string values.
-                var params = new URLSearchParams(document.location.search);
-                if (params.has('lang', 'fr')) {
-                    heading_text = "Passer à";
-                }
-                var heading_element = document.createElement('h3');
-                heading_element.id = 'skip-to-header';
-                heading_element.textContent = heading_text;
-                first_button.insertAdjacentElement('beforebegin', heading_element);
-                vm.added = true;
-                return false;
+        vm.$onInit = onInit;
+        function onInit(){
+            var heading_text = 'Skip To';
+            // Create URLSearchParams object to get query string values.
+            var params = new URLSearchParams(document.location.search);
+            if (params.has('lang', 'fr')) {
+                heading_text = "Passer à";
+            }
+            var heading_element = document.createElement('h3');
+            heading_element.id = 'skip-to-header';
+            heading_element.textContent = heading_text;
+            try {
+                document.getElementById('services-index').getElementsByTagName('button')[0].insertAdjacentElement('beforebegin', heading_element);
+            } catch (error){
+                console.log(error);
+            }
         }
     }]);
 })();
