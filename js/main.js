@@ -4,7 +4,8 @@ import 'primo-explore-hathitrust-availability';
     var app = angular.module('viewCustom', ['angularLoad', 'hathiTrustAvailability']);
     // Include HathiTrust full text links.
     app.component('prmSearchResultAvailabilityLineAfter', {
-        template: `<hathi-trust-availability msg="Full Text Available Online at HathiTrust" entity-id="http://cufed.carleton.ca/adfs/services/trust"></hathi-trust-availability>`
+        template: `<hathi-trust-availability msg="Full Text Available Online at HathiTrust" entity-id="http://cufed.carleton.ca/adfs/services/trust">
+                   </hathi-trust-availability>`
     });
 
     // Add components to the prmExportRisAfter template.
@@ -30,17 +31,21 @@ import 'primo-explore-hathitrust-availability';
     app.component('carletonAcceptableUsePolicyLink', {
         bindings: { parentCtrl: '<' },
         controller: 'carletonAcceptableUsePolicyLinkController',
-        template: `<a ng-if="$ctrl.online()" href="https://library.carleton.ca/about/policies/electronic-resources-acceptable-use-policy">Electronic Resources Acceptable Use Policy <prm-icon icon-type="svg" svg-icon-set="primo-ui" external-link="" icon-definition="open-in-new"></prm-icon></a>`
+        template: `<a ng-if="$ctrl.online()" target="_blank"
+                       href="https://library.carleton.ca/about/policies/electronic-resources-acceptable-use-policy">
+                       Electronic Resources Acceptable Use Policy
+                       <prm-icon icon-type="svg" svg-icon-set="primo-ui" external-link="" icon-definition="open-in-new"></prm-icon>
+                   </a>`
     });
-    app.controller('carletonAcceptableUsePolicyLinkController', [function () {
+    app.controller('carletonAcceptableUsePolicyLinkController', [function (){
         var vm = this;
         vm.online = online;
-        function online() {
+        function online(){
             return vm.parentCtrl.title === 'nui.getit.service_viewit';
         }
     }]);
 
-    // Add components to the prmServiceNgrsAfter template. 
+    // Add components to the prmServiceNgrsAfter template.
     app.component('prmServiceNgrsAfter', {
         bindings: { parentCtrl: '<' },
         template: `<carleton-hide-rapido-for-reserves-items parent-ctrl="$ctrl.parentCtrl">
@@ -52,7 +57,7 @@ import 'primo-explore-hathitrust-availability';
         controller: 'carletonHideRapidoForReservesItemsController',
         template: `<span ng-if="$ctrl.hide()"></span>`
     });
-    app.controller('carletonHideRapidoForReservesItemsController', [function() {
+    app.controller('carletonHideRapidoForReservesItemsController', [function(){
         var vm = this;
         vm.hide = hide;
         function hide(){
@@ -60,50 +65,19 @@ import 'primo-explore-hathitrust-availability';
                 vm.parentCtrl.item.hasOwnProperty('delivery') &&
                 vm.parentCtrl.item.delivery.hasOwnProperty('holding') &&
                 Array.isArray(vm.parentCtrl.item.delivery.holding)) {
-               vm.parentCtrl.item.delivery.holding.forEach(function(itemHolding) {
-                   if (itemHolding.libraryCode === "MACODRUM" &&
-                       itemHolding.subLocationCode === "rsv") {
-                       vm.parentCtrl._almaRSServiceAvailable = "false";
-                   }
-               });
+                for (const itemHolding of vm.parentCtrl.item.delivery.holding) {
+                    if (itemHolding.libraryCode === "MACODRUM" &&
+                        itemHolding.subLocationCode === "rsv") {
+                        vm.parentCtrl._almaRSServiceAvailable = "false";
+                        break;
+                    }
+                }
             }
             return false;
         }
     }]);
 
-    // Add components to the prmAuthenticationAfter template.
-    app.component('prmAuthenticationAfter', {
-        bindings: { parentCtrl: '<' },
-        template: `<carleton-add-name-to-root-scope parent-ctrl="$ctrl.parentCtrl">
-                   </carleton-add-name-to-root-scope>`,
-    });
-    // Add the user's name to the root scope.
-    app.component('carletonAddNameToRootScope', {
-        bindings: { parentCtrl: '<' },
-        controller: 'carletonAddNameToRootScopeController',
-        template: ''
-    });
-    app.controller('carletonAddNameToRootScopeController', ['$scope', '$rootScope', function($scope, $rootScope) {
-        var vm = this;
-        vm.$onInit = onInit;
-        function onInit(){
-            // If the user is logged in, get their name
-            // and assign it to a global variable ($rootScope)
-            // so it can be shared with carletonAddAlternativeRequestFormLinkController.
-            var isLoggedIn = vm.parentCtrl.isLoggedIn;
-            $rootScope.isLoggedIn = isLoggedIn;
-            if (isLoggedIn == true) {
-                var selector = '.user-name';
-                var user_name = '';
-                get_element(selector, function(callback) {
-                    user_name = callback;
-                    $rootScope.user_name = user_name;
-                });
-            }
-        }
-    }]);
-
-    // Add components to the prmBriefResultAfter.
+    // Add components to the prmBriefResultAfter template.
     app.component('prmBriefResultAfter', {
         bindings: { parentCtrl: '<' },
         template: `<carleton-add-alternative-request-form-link parent-ctrl="$ctrl.parentCtrl">
@@ -113,22 +87,23 @@ import 'primo-explore-hathitrust-availability';
     app.component('carletonAddAlternativeRequestFormLink', {
         bindings: { parentCtrl: '<' },
         controller: 'carletonAddAlternativeRequestFormLinkController',
-        template: `<div ng-if="$ctrl.ShowAccessibleLink()" class="alternative-request-form-link">
-                       <a tabindex="0" ng-click="$ctrl.showAccessibleCopyFormOnClick($event)" ng-keypress="showAccessibleCopyFormOnEnter($event)" class="arrow-link md-primoExplore-theme">
-                         Request Alternate Format for Disabled Users
-                         <span class="sr-only">Opens in a new window</span>
-                         <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
-                         <prm-icon link-arrow="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="chevron-right"></prm-icon>
+        template: `<div ng-if="$ctrl.showAccessibleLink()" class="alternative-request-form-link">
+                       <a tabindex="0" ng-click="$ctrl.showAccessibleCopyFormOnClick($event)"
+                                       ng-keypress="$ctrl.showAccessibleCopyFormOnEnter($event)"
+                                       class="arrow-link md-primoExplore-theme">
+                            Request Alternate Format for Disabled Users
+                            <span class="sr-only">Opens in a new window</span>
+                            <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
+                            <prm-icon link-arrow="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="chevron-right"></prm-icon>
                        </a>
                    </div>`
     });
-    app.controller('carletonAddAlternativeRequestFormLinkController', ['$scope', '$rootScope', function($scope, $rootScope) {
+    app.controller('carletonAddAlternativeRequestFormLinkController', [function(){
         var vm = this;
         vm.$onInit = onInit;
         function onInit(){
-            var link = [];
-
-            var resource_title = vm.parentCtrl.item.pnx.display.title[0];
+            // Create URLSearchParams object to get query string values.
+            var params = new URLSearchParams(document.location.search);
 
             var doc_id = '';
             var item_id = vm.parentCtrl.item['@id'];
@@ -151,25 +126,14 @@ import 'primo-explore-hathitrust-availability';
                 doc_id = '';
             }
             var context = vm.parentCtrl.item.context;
-            var url_params_array = window.location.search.split('&');
-            var url_param_array = '';
-            var vid = '';
-            var search_scope = '';
-            var tab = '';
 
-            for (var i = 0; i < url_params_array.length; i++) {
-                url_param_array = url_params_array[i].split('=');
-                for (var index in url_param_array) {
-                    if (url_param_array[0].replace('?','') == 'vid') {
-                        vid = url_param_array[1];
-                    } else if (url_param_array[0].replace('?','') == 'search_scope') {
-                        search_scope = url_param_array[1];
-                    } else if (url_param_array[0].replace('?','') == 'tab') {
-                        tab = url_param_array[1];
-                    }
-                } 
-            }
-            var resource_title_link = encodeURIComponent('https://' + window.location.hostname + '/discovery/fulldisplay?docid=' + doc_id + '&context=' + context + '&vid=' + vid + '&search_scope=' + search_scope + '&tab=' + tab);
+            var resource_link = encodeURIComponent('https://' + window.location.hostname + '/discovery/fulldisplay?docid=' + doc_id
+                                                   + '&context=' + context
+                                                   + '&vid=' + (params.has('vid') ? params.get('vid') : '')
+                                                   + '&search_scope=' + (params.has('search_scope') ? params.get('search_scope') : '')
+                                                   + '&tab=' + (params.has('tab') ? params.get('tab') : ''));
+
+            var resource_title = vm.parentCtrl.item.pnx.display.title[0];
 
             var resource_author = '';
             if (vm.parentCtrl.item.pnx.addata.addau !== undefined) {
@@ -185,105 +149,121 @@ import 'primo-explore-hathitrust-availability';
                 resource_isbn = vm.parentCtrl.item.pnx.addata.issn[0];
             }
 
-            var recordType = '';
-            if (vm.parentCtrl.item.pnx.display.type !== undefined) {
-                recordType = vm.parentCtrl.item.pnx.display.type[0];
+            var resource_mms = '';
+            if (vm.parentCtrl.item.pnx.display.mms !== undefined) {
+                resource_mms = vm.parentCtrl.item.pnx.display.mms[0];
             }
 
-            var aTitle = '';
-            if (recordType == 'article') {
-                aTitle = resource_title;
-                resource_title = '';
-            }
-
-            var resourceType = '';
-            if (vm.parentCtrl.item.pnx.addata.format !== undefined) {
-                resourceType = vm.parentCtrl.item.pnx.addata.format[0];
-            }
-
-            var recordYear = '';
+            var resource_date = '';
             if (vm.parentCtrl.item.pnx.addata.risdate !== undefined) {
-                recordYear = vm.parentCtrl.item.pnx.addata.risdate[0];
+                resource_date = vm.parentCtrl.item.pnx.addata.risdate[0];
+            } else if (vm.parentCtrl.item.pnx.addata.date !== undefined) {
+                resource_date = vm.parentCtrl.item.pnx.addata.date[0];
             }
 
-            var recordVolume = '';
+            var resource_volume = '';
             if (vm.parentCtrl.item.pnx.addata.volume !== undefined) {
-                recordVolume = vm.parentCtrl.item.pnx.addata.volume[0];
+                resource_volume = vm.parentCtrl.item.pnx.addata.volume[0];
             }
 
-            var recordIssue = '';
-            if (vm.parentCtrl.item.pnx.addata.issue !== undefined) {
-                recordIssue = vm.parentCtrl.item.pnx.addata.issue[0];
+            var name = '';
+            const username_tag = document.querySelector("prm-user-area-expandable .user-name");
+            if (username_tag !== null) {
+                name = username_tag.innerText;
             }
 
-            var startPage = '';
-            if (vm.parentCtrl.item.pnx.addata.spage !== undefined) {
-                startPage = vm.parentCtrl.item.pnx.addata.spage[0];
-            }
-
-            var endPage = '';
-            if (vm.parentCtrl.item.pnx.addata.epage !== undefined) {
-                endPage = vm.parentCtrl.item.pnx.addata.epage[0];
-            }
-
-            var jTitle = '';
-            if (vm.parentCtrl.item.pnx.addata.jtitle !== undefined) {
-                jTitle = vm.parentCtrl.item.pnx.addata.jtitle[0];
-            }
-
-            var jSource = '';
-            if (vm.parentCtrl.item.pnx.display.source !== undefined) {
-                vm.parentCtrl.item.pnx.display.source.forEach(addSource);
-            }
-            function addSource(sourceProvider){
-                jSource += "&source[]=" + sourceProvider;
-            }
-
-            //find source format if electronic or print
-            var sourceType = '';
-            if (vm.parentCtrl.item.pnx.display.format !== undefined) {
-                if (vm.parentCtrl.item.pnx.display.format[0].includes("online")) {
-                    sourceType = "Electronic";
-                } else {
-                    sourceType = "Print";
-                }
-            } else if (vm.parentCtrl.item.pnx.facets.toplevel !== undefined) {
-                vm.parentCtrl.item.pnx.facets.toplevel.forEach(checkFacets);
-            }
-  
-            function checkFacets(checkFacet){
-                if (checkFacet.includes("online")) {
-                    sourceType = "Electronic";
-                }
-            }
-
-            var searchrecordId = '';
-            if (doc_id!=='') {
-                searchrecordId = '#SEARCH_RESULT_RECORDID_'+doc_id+' .best-location-library-code';
-            }
-
-            var username = '';
-            if ($rootScope.user_name !== undefined) {
-                username = $rootScope.user_name;
+            var resource_type = '';
+            if (vm.parentCtrl.item.pnx.display.type !== undefined) {
+                resource_type = vm.parentCtrl.item.pnx.display.type[0];
             }
 
             // only show the Request Acccessible Copy if record type is book or article
-            vm.ShowAccessibleLink = function(){
-                if (recordType == 'book' || recordType == 'article'){
-                    return true;
-                } else {
-                    return false;
+            vm.showAccessibleLink = function(){
+                if (resource_type == 'book' &&
+                    vm.parentCtrl.hasOwnProperty('item') &&
+                    vm.parentCtrl.item.hasOwnProperty('delivery') &&
+                    vm.parentCtrl.item.delivery.hasOwnProperty('holding') &&
+                    Array.isArray(vm.parentCtrl.item.delivery.holding)) {
+                    for (const itemHolding of vm.parentCtrl.item.delivery.holding) {
+                        if (itemHolding.libraryCode === "MACODRUM"){
+                            return true;
+                            break;
+                        }
+                    }
                 }
+                return false;
+            }
+            vm.buildLink = function(){
+                return 'https://library.carleton.ca/forms/alternate-format-request-form-page?title='+resource_title
+                        +'&author='+resource_author.trim()
+                        +'&link='+resource_link.trim()
+                        +'&isbn='+resource_isbn.trim()
+                        +'&date='+resource_date
+                        +'&volume='+resource_volume
+                        +'&mms='+resource_mms
+                        +'&name='+name;
             }
             vm.showAccessibleCopyFormOnClick = function($event){
-                window.open('https://library.carleton.ca/form/request-accessible-copy?title='+resource_title+'&atitle='+aTitle+'&author='+resource_author.trim()+ '&link=' + resource_title_link.trim()+'&isbn='+ resource_isbn.trim()+'&rtype='+resourceType+'&year='+recordYear+'&volume='+recordVolume+'&issue='+recordIssue+'&spage='+startPage+'&epage='+endPage+'&jtitle='+jTitle+jSource+'&sformat='+sourceType+'&username='+username,'_blank');
+                window.open(vm.buildLink(), '_blank');
             }
-            $scope.showAccessibleCopyFormOnEnter = function($event){
+            vm.showAccessibleCopyFormOnEnter = function($event){
                 if ($event.key == "Enter") {
-                window.open('https://library.carleton.ca/form/request-accessible-copy?title='+resource_title+'&atitle='+aTitle+'&author='+resource_author.trim()+ '&link=' + resource_title_link.trim()+'&isbn='+ resource_isbn.trim()+'&rtype='+resourceType+'&year='+recordYear+'&volume='+recordVolume+'&issue='+recordIssue+'&spage='+startPage+'&epage='+endPage+'&jtitle='+jTitle+jSource+'&sformat='+sourceType+'&username='+username,'_blank');
+                    window.open(vm.buildLink(), '_blank');
                 }
             }
-        }  
+        }
+    }]);
+
+    // Add components to the prmFullViewAfter container.
+    app.component('prmFullViewAfter', {
+        bindings: { parentCtrl: '<' },
+        template: `<carleton-add-skip-to-header parent-ctrl="$ctrl.parentCtrl">
+                   </carleton-add-skip-to-header>`
+    });
+    // Add a Skip To header. This is borrowed and adapted from UWindsor.
+    // We're going to misuse the ng-if here. The services-index container
+    // we want to prepend to isn't available during onInit. So,
+    // we fire addHeader using the if until it is available.
+    // After the header is added, return false as soon as possible.
+    app.component('carletonAddSkipToHeader', {
+        bindings: {parentCtrl: '<'},
+        controller: 'carletonAddSkipToHeaderController',
+        template: `<span ng-if="$ctrl.addHeader()"></span>`
+    });
+    app.controller('carletonAddSkipToHeaderController', [function(){
+        var vm = this;
+        vm.addHeader = addHeader;
+        vm.added = false;
+        function addHeader(){
+                if (vm.added === true) {
+                    return false;
+                }
+                var service_index = document.getElementById('services-index');
+                if (service_index === null) {
+                    return false;
+                }
+                var service_buttons = service_index.getElementsByTagName('button');
+                if (service_buttons.length == 0){
+                    return false;
+                }
+                var first_button = service_buttons[0];
+                // target #services-index to add an h3 Skip To heading
+                // h3 matches brief display facet headings
+                // Text much longer than 'Skip To' will be truncated by Primo VE
+                //default lang to en$
+                var heading_text = 'Skip To';
+                // Create URLSearchParams object to get query string values.
+                var params = new URLSearchParams(document.location.search);
+                if (params.has('lang', 'fr')) {
+                    heading_text = "Passer à";
+                }
+                var heading_element = document.createElement('h3');
+                heading_element.id = 'skip-to-header';
+                heading_element.textContent = heading_text;
+                first_button.insertAdjacentElement('beforebegin', heading_element);
+                vm.added = true;
+                return false;
+        }
     }]);
 })();
 (function() {
