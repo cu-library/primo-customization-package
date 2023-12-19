@@ -314,6 +314,23 @@ ul.where-can-i-get-help-list li {
 }
 
 /* Alternative Request Form link */
+.alternative-request-form-link a::before {
+  background-image: url('../img/accessibility-icon.svg');
+  width: 25px;
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-left: -25px;
+}
+
+.alternative-request-form-link a {
+  padding-left: 20px;
+}
+
 .alternative-request-form-link {
   margin-top: 10px;
 }

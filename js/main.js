@@ -91,7 +91,7 @@ import 'primo-explore-hathitrust-availability';
                        <a tabindex="0" ng-click="$ctrl.showAccessibleCopyFormOnClick($event)"
                                        ng-keypress="$ctrl.showAccessibleCopyFormOnEnter($event)"
                                        class="arrow-link md-primoExplore-theme">
-                            Request Alternate Format for Disabled Users
+                            Request an Accessible Alternate Format
                             <span class="sr-only">Opens in a new window</span>
                             <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
                             <prm-icon link-arrow="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="chevron-right"></prm-icon>
