@@ -245,6 +245,12 @@ import 'primo-explore-hathitrust-availability';
             }
         }
     }]);
+
+    // Temporary - add notice about emails
+    app.component('prmExploreFooterAfter', {
+        bindings: { parentCtrl: '<' },
+        template: '<div role="alert" aria-live="assertive" layout-align="center center" class="layout-align-center-center">\n <div layout="column" class="bar alert-bar layout-align-center-center" layout-align="center center" style="height:100%">\n <span class="bar-text">\n Some email notifications from the library are not being delivered. Sign in to your Library Account for up-to-date information on holds, requests, and due dates.\n</span>\n </div>\n </div>'
+    });
 })();
 (function() {
     'use strict';
