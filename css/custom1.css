@@ -529,6 +529,9 @@ ul.where-can-i-get-help-list li {
   margin-bottom: 5px;
 }
 
+/* Temporary CSS hiding Curbside option in the Request library pick-up form */
+/* NOT PERMANENT - Just here while Access clears out the existing requests. After that we will close Curbside Hold Shelf and remove the CSS, as the option will disappear on its own. */
+md-option[value="8602058720005153$$LIBRARY"] {display: none}
 span.umnHathiTrustLink {
   margin-left: -5px;
 }
