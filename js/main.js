@@ -2,6 +2,19 @@ import 'primo-explore-hathitrust-availability';
 (function () {
     'use strict';
     var app = angular.module('viewCustom', ['angularLoad', 'hathiTrustAvailability']);
+
+    app.service("primawsRest",['$http', function ($http) {
+        this.myAccountPersonalSettings = function () {
+            return $http({
+                method: 'GET',
+                url: '/primaws/rest/priv/myaccount/personal_settings',
+                headers: {
+                    'Authorization': 'Bearer "' + sessionStorage.primoExploreJwt + '"',
+                }
+            });
+        }
+    }]);
+
     // Include HathiTrust full text links.
     app.component('prmSearchResultAvailabilityLineAfter', {
         template: `<hathi-trust-availability msg="Full Text Available Online at HathiTrust" entity-id="http://cufed.carleton.ca/adfs/services/trust">
@@ -91,17 +104,33 @@ import 'primo-explore-hathitrust-availability';
                        <a tabindex="0" ng-click="$ctrl.showAccessibleCopyFormOnClick($event)"
                                        ng-keypress="$ctrl.showAccessibleCopyFormOnEnter($event)"
                                        class="arrow-link md-primoExplore-theme">
-                            Request an Accessible Alternate Format
+                            Get an Accessible Alternate Format
                             <span class="sr-only">Opens in a new window</span>
                             <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
                             <prm-icon link-arrow="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="chevron-right"></prm-icon>
                        </a>
                    </div>`
     });
-    app.controller('carletonAddAlternativeRequestFormLinkController', [function(){
+    app.controller('carletonAddAlternativeRequestFormLinkController', ['primawsRest', function(primawsRest){
         var vm = this;
         vm.$onInit = onInit;
+        vm.user_email = "";
         function onInit(){
+
+            // Use the primawsRest service to perform an API call.
+            // This is used to set the user's email value.
+            primawsRest.myAccountPersonalSettings().then(function successCallback(response) {
+                if (response !== null && response !== undefined &&
+                    response.hasOwnProperty('data') &&
+                    response.data.hasOwnProperty('data') &&
+                    response.data.data.hasOwnProperty('email') &&
+                    response.data.data.email.hasOwnProperty('value')) {
+                    vm.user_email = response.data.data.email.value;
+                }
+                }, function errorCallback(response) {
+                    //noop
+            });
+
             // Create URLSearchParams object to get query string values.
             var params = new URLSearchParams(document.location.search);
 
@@ -201,7 +230,8 @@ import 'primo-explore-hathitrust-availability';
                         +'&date='+resource_date
                         +'&volume='+resource_volume
                         +'&mms='+resource_mms
-                        +'&name='+name;
+                        +'&name='+name
+                        +'&email='+vm.user_email;
             }
             vm.showAccessibleCopyFormOnClick = function($event){
                 window.open(vm.buildLink(), '_blank');
