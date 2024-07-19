@@ -529,6 +529,19 @@ ul.where-can-i-get-help-list li {
   margin-bottom: 5px;
 }
 
+/* ALEX: I'm leaving this here with "display: none", because we have to put up notice banners semi-regularly and it's easier to not have to hunt down and paste in the block every time. Screen readers ignore display: none elements, so this should be fine.
+To activate this, enter notice in [INSERT NOTICE] space and change "display: none" to display: "inline-block". */
+/* LOCAL BANNER */ 
+body::before { 
+content: "[INSERT NOTICE]."; 
+display: none; 
+background: #FFFF00; 
+text-align: center; 
+padding: 15px;
+width: 100%; 
+font-weight: bold; 
+} 
+/* END local banner */
 span.umnHathiTrustLink {
   margin-left: -5px;
 }
