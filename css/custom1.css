@@ -543,8 +543,8 @@ ul.where-can-i-get-help-list li {
 To activate this, enter notice in [INSERT NOTICE] space and change "display: none" to display: "inline-block". */
 /* LOCAL BANNER */ 
 body::before { 
-content: "[INSERT NOTICE]."; 
-display: none; 
+content: "Due to the Canada Post strike, requests for some physical items may be delayed."; 
+display: inline-block; 
 background: #FFFF00; 
 text-align: center; 
 padding: 15px;
