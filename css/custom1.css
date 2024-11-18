@@ -553,6 +553,11 @@ font-weight: bold;
 } 
 /* END local banner */
 
+/* Canada Post Strike */
+md-option[value="8602059240005153$$LIBRARY"] {
+  display: none;
+}
+
 span.umnHathiTrustLink {
   margin-left: -5px;
 }
