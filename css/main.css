@@ -360,8 +360,8 @@ ul.where-can-i-get-help-list li {
 To activate this, enter notice in [INSERT NOTICE] space and change "display: none" to display: "inline-block". */
 /* LOCAL BANNER */ 
 body::before { 
-content: "Due to the Canada Post strike, requests for some physical items may be delayed."; 
-display: inline-block; 
+content: "[INSERT NOTICE]"; 
+display: none; 
 background: #FFFF00; 
 text-align: center; 
 padding: 15px;
@@ -369,8 +369,3 @@ width: 100%;
 font-weight: bold; 
 } 
 /* END local banner */
-
-/* Canada Post Strike */
-md-option[value="8602059240005153$$LIBRARY"] {
-  display: none;
-}
