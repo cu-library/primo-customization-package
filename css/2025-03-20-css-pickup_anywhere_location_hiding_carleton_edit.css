@@ -16,15 +16,15 @@ md-option[value="1257805430005152$$OUT_OF_INSTITUTION"] { display: none; } /*Ped
 /*Carleton Request Form*/
 /*Shouldn't actually need to hide this as the $$OUT_OF_INSTITUTION at the end makes it apply only to non-Carleton patrons. */
 md-option[value="8602059240005153$$OUT_OF_INSTITUTION"] { display: none; } /*Mail Delivery*/
+md-option[value="8602058720005153$$OUT_OF_INSTITUTION"] { display: none; } /*curbside pick-up*/
 
 /*Guelph Request Form*/
 /*no locations hidden*/
 
 /*Lakehead Request Form*/
-md-option[value="112034460005155$$OUT_OF_INSTITUTION"] { display: none; } /*Law Library*/
+/*no locations hidden*/
 
 /*Laurentian Request Form*/
-md-option[value="112077800005165$$OUT_OF_INSTITUTION"] { display: none; } /*Education Resource Centre*/
 md-option[value="112077420005165$$OUT_OF_INSTITUTION"] { display: none; } /*Architecture*/
 
 /*McMaster Request Form*/
@@ -79,8 +79,8 @@ md-option[value="11338426510005156$$OUT_OF_INSTITUTION"] { display: none; } /*Wi
 md-option[value="8188056800005164$$OUT_OF_INSTITUTION"] { display: none; } /*Keele Book Lockers*/
 md-option[value="8188104370005164$$OUT_OF_INSTITUTION"] { display: none; } /*Glendon Book Lockers*/
 md-option[value="9599265900005164$$OUT_OF_INSTITUTION"] { display: none; } /*Osgoode Book Lockers*/
+md-option[value="20955511860005164$$OUT_OF_INSTITUTION"] { display: none; } /*Markham Book Lockers*/
 md-option[value="112036150005164$$OUT_OF_INSTITUTION"] { display: none; } /*Osgoode Hall*/
-md-option[value="20955511850005164$$OUT_OF_INSTITUTION"] {display: none; } /*Markham Book Lockers - it says York U members only so I'm hiding these. - Alex L*/
 
 /* And hide empty campuses in the Request Forms too */
 
@@ -118,15 +118,15 @@ md-option[value="1257805430005152"] { display: none; } /*Pedagogical*/
 
 /*Carleton Resource Sharing Request Form*/
 md-option[value="8602059240005153"] { display: none; } /*Mail Delivery*/
+md-option[value="8602058720005153"] { display: none; } /*Curbside*/
 
 /*Guelph Resource Sharing Request Form*/
 /*no locations hidden*/
 
 /*Lakehead Resource Sharing Request Form*/
-md-option[value="112034460005155"] { display: none; } /*Law Library*/
+/*no locations hidden*/
 
 /*Laurentian Resource Sharing Request Form*/
-md-option[value="112077800005165"] { display: none; } /*Education Resource Centre*/
 md-option[value="112077420005165"] { display: none; } /*Architecture*/
 
 /*McMaster Resource Sharing Request Form*/
@@ -149,6 +149,9 @@ md-option[value="112026640005160"] { display: none; } /*Whitby*/
 md-option[value="37093253850005160"] { display: none; } /*Home Delivery*/
 
 /*Queen's Resource Sharing Request Form*/
+/*no locations hidden*/
+
+/*Toronto Metropolitan Request Form*/
 /*no locations hidden*/
 
 /*Trent Resource Sharing Request Form*/
@@ -179,5 +182,5 @@ md-option[value="11338426510005156"] { display: none; } /*Wilfrid Laurier Univer
 md-option[value="8188056800005164"] { display: none; } /*Keele Book Lockers*/
 md-option[value="8188104370005164"] { display: none; } /*Glendon Book Lockers*/
 md-option[value="9599265900005164"] { display: none; } /*Osgoode Book Lockers*/
+md-option[value="20955511860005164"] { display: none; } /*Markham Book Lockers*/
 md-option[value="112036150005164"] { display: none; } /*Osgoode Hall*/
-md-option[value="20955511850005164"] {display: none; } /*Markham Book Lockers - it says York U members only so I'm hiding these. - Alex L*/
