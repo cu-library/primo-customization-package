@@ -49,7 +49,8 @@ md-option[value="37093253850005160$$OUT_OF_INSTITUTION"] { display: none; } /*Ho
 /*no locations hidden*/
 
 /*Toronto Metropolitan Request Form*/
-/*no locations hidden*/
+md-option[value="5114195450008636$$OUT_OF_INSTITUTION"] { display: none; } /*Bikram S. Dhillon and Family Medical Library*/
+md-option[value="3867654700008636$$OUT_OF_INSTITUTION"] { display: none; } /*Law Library*/
 
 /*Trent Request Form*/
 /*no locations hidden*/
@@ -152,7 +153,8 @@ md-option[value="37093253850005160"] { display: none; } /*Home Delivery*/
 /*no locations hidden*/
 
 /*Toronto Metropolitan Request Form*/
-/*no locations hidden*/
+md-option[value="5114195450008636"] { display: none; } /*Bikram S. Dhillon and Family Medical Library*/
+md-option[value="3867654700008636"] { display: none; } /*Law Library*/
 
 /*Trent Resource Sharing Request Form*/
 /*no locations hidden*/
