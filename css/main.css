@@ -360,7 +360,7 @@ ul.where-can-i-get-help-list li {
 To activate this, enter notice in [INSERT NOTICE] space and change "display: none" to display: "inline-block". */
 /* LOCAL BANNER */ 
 body::before { 
-content: "[INSERT NOTICE]"; 
+content: "Note: Requests are not working. We apologize for the inconvenience."; 
 display: none; 
 background: #FFFF00; 
 text-align: center; 
@@ -369,3 +369,21 @@ width: 100%;
 font-weight: bold; 
 } 
 /* END local banner */
+span.umnHathiTrustLink {
+  margin-left: -5px;
+}
+
+span.umnHathiTrustLink md-icon svg {
+  height: 1.2em;
+  filter: grayscale(100%);
+}
+
+span.umnHathiTrustLink:hover md-icon svg {
+  filter: grayscale(0%);
+}
+
+ /* Trying to remove Mail Delivery */
+
+md-option[value="8602059240005153$$LIBRARY"] { 
+   display: none;
+ }
